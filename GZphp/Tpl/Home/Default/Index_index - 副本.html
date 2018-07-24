@@ -1,0 +1,90 @@
+
+
+<!--+++大图开始+++-->
+<div class="datu_border"></div>
+
+
+<div class="banner">
+
+<div id="full-screen-slider">
+
+	<ul id="slides">
+	
+		
+		
+<GZ:list sql="select * from gz_slide_data where fid = '1' and lang='1' and  status='1' order by listorder desc,id desc limit 5" key='i'>
+			
+			
+<li style=" background:url({$r.pic}) no-repeat center top">
+		
+		<a href="{$r.link}" target="_blank"></a>
+		
+		</li>
+			
+		</GZ:list>
+	  
+	  
+	</ul>
+	
+</div>
+
+</div>
+
+<div class="datu_border"></div>
+
+<!--+++大图结束+++-->
+
+<!--+++最新动态开始+++-->
+
+<div class="shouy_zuixin">
+
+	<div class="shouy_zuixin_con">
+		
+		<!--+++标题+++-->
+		
+		<div class="shouy_zuixin_con_top">
+		
+			<div class="shouy_zuixin_con_top_l">最新动态</div>
+			
+			<div class="shouy_zuixin_con_top_c">
+			<GZ:list catid="143" limit="1" order="posid desc,listorder desc,id desc">
+			<p><a href="{$r.url}">{$r.title}</a></p>
+			</GZ:list>
+			</div>
+			
+			<div class="shouy_zuixin_con_top_r"><a href="<?php echo str_ireplace('/index.php','',$Categorys['143']['url']);?>">更多新闻</a></div>
+		
+		</div>
+	
+		<!--+++标题结束+++-->
+		
+		<!--+++内容+++-->
+		
+		<div class="dongtai_con">
+		
+			<ul>
+			<GZ:list catid="144" limit="5" thumb="1" key="kki" order="posid desc,listorder desc,id desc">
+				<li {if $kki==1}class="dt_liml"{/if}>
+				<a href="{$r.url}">
+				
+					<div class="dt_litop"><img src="{$r.thumb|thumb=###,224,130,1}" ></div>
+					
+					<div class="dt_libot">{$r.title|str_cut=###,18}</div>
+				
+				</a></li></GZ:list>
+				
+				
+			
+			</ul>
+		
+		</div>
+		
+		<!--+++内容结束+++-->
+	
+	
+	</div>
+
+</div>
+
+<!--+++最新动态结束+++-->
+

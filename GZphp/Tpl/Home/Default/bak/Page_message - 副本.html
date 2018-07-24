@@ -1,0 +1,153 @@
+
+<!--+++++++++++++++大图部分+++++++++++++++-->
+<style>
+.banner2 {
+    background: url({$image}) no-repeat;
+    background-size:cover;background-position: center;}
+</style>
+<div class="banner2"></div>
+
+<!--+++++++++++++++主体部分+++++++++++++++-->
+
+<div class="zhuti">
+
+  <div class="zhuti_con clearfloat">
+  	
+<!--+++++++++++++++主体左边部分+++++++++++++++-->
+    
+    <div class="zhuti_con_l">
+    	
+        <div class="zhuti_con_l_t">
+        	
+            <div class="zhuti_con_l_t_t">
+            
+                        	<p class="zt_tp1 zt_tp2">{$Categorys.$newsssss.keywords}</p>
+                
+                <p class="zt_tp2">{$Categorys.$newsssss.catname}</p>
+                
+            </div>
+            
+            <div class="zhuti_con_l_p_b">
+            	<ul>
+<include file="A:l"/>
+                </ul>
+            </div>
+            
+        </div>
+        
+        
+  <include file="C:l"/>
+        
+    </div>
+    
+<!--+++++++++++++++主体右边部分+++++++++++++++-->
+    
+    <div class="zhuti_con_r">
+    
+    	<div class="zhuti_con_r_1 clearfloat">
+        	
+            <div class="zhuti_con_r_1_l"><span>{$catname}</span>  /  {$seo_keywords}</div>
+            
+            <div class="zhuti_con_r_1_r"><include file="Home:catpos"/></div>
+            
+        </div>
+        
+        <div class="zhuti_con_r_2">在线留言</div>
+        
+        <div class="zhuti_con_r_3">
+        
+        <div class="contact1"><img src="/GZphp/Tpl/Home/Default/Public/images/xiaologo.png" width="255" height="114"></div>
+        
+        <div class="ly_con2 clearfloat">
+        
+        <form name="myform" id="myform" method="POST" action="/index.php?g=User&m=Post&a=zxly">
+
+<!--            <h3 class="zhuti_bt">我要留言</h3>
+            <div class="bianhuan clearfloat dqbd">
+-->
+                    <div class="bt clearfloat">
+                        <p class="btp1">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</p>
+                        <input type="text" name="xm" id="xm" class="btin1" maxlength="5" />
+
+                    </div>
+                    <div class="bt clearfloat">
+                        <p class="btp1">联系电话：</p>
+                        <input type="text" name="tel" id="dh" class="btin1" maxlength="11" />
+                    </div>
+                    <div class="bt clearfloat">
+                        <p class="btp1">电子邮箱：</p>
+                        <input type="text" name="yx"id="yx" class="btin1" maxlength="45" />
+                    </div>
+                    <div class="bt clearfloat">
+                        <p class="btp1">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</p>
+                        <input type="text" name="dz" id="dz" class="btin1" maxlength="95" />
+                    </div>
+                    <div class="bt clearfloat">
+                        <p class="btp2 clearfloat">留言内容：</p>
+                        <textarea name="content" id="content" cols="" rows="" class="btin2"></textarea>
+                    </div>
+                    <input type="button" name="" onclick="test();" value="提交"  class="ml80 clearfloat" />
+                    <input type="reset" name="" value="重置" class="ml802 clearfloat" />
+
+<!--
+            </div>-->
+            </form>
+
+
+<script>
+function ischeckemail(yx){
+var email = document.getElementById(yx).value;
+            if (email != "") {
+            var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+                isok= reg.test(email );
+                if (!isok) {
+                    return false;
+                }
+				else return true;
+            };
+}
+function test()
+{
+var name=document.getElementById('xm').value;
+var phone=document.getElementById('dh').value;
+var email=document.getElementById('yx').value;
+var address=document.getElementById('dz').value;
+var content=document.getElementById('content').value;
+if(!name){
+alert('请输入姓名');return false;
+}
+if(!phone || phone.length!=11){
+alert('请输入11位电话号码！');return false;
+}
+if(!email || !ischeckemail('yx')){
+alert('请输入正确的邮箱！');return false;
+}
+if(!address){
+alert('请输入地址');return false;
+}
+if(!content){
+alert('请输入留言内容');return false;
+}
+document.getElementById("myform").submit();
+//alert(name);
+
+}
+</script>
+        
+        </div>
+        
+        </div>
+        
+        
+        
+        
+        
+
+        
+    
+    </div>
+    
+  </div>
+  
+  
+</div>

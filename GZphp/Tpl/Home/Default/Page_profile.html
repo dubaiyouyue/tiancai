@@ -1,0 +1,78 @@
+<!--+++大图开始+++-->
+
+<div class="datu_border"></div>
+
+<div class="banner1" style="background: url({$image}) no-repeat center;"></div>
+
+<div class="datu_border"></div>
+
+<!--+++大图结束+++-->
+
+<!--+++内容+++-->
+
+<div class="zhuti">
+
+	<div class="zhuti_con clearfloat">
+	
+	<!--+++++内容左边+++++-->
+	
+		<div class="zhuti_con_l">
+		
+			<div class="zhuti_con_l_ttop">
+		
+			<div class="zhuti_con_l_t">{$Categorys.$newsssss.catname}</div>
+			
+			<div class="zhuti_con_l_b">
+			
+				<ul>
+				
+<include file="A:l"/>
+				
+				</ul>
+			
+			</div>
+			
+			</div>
+			
+			<include file="C:l"/>
+			
+		
+		</div>
+		
+	<!--+++++内容右边+++++-->	
+		
+		<div class="zhuti_con_r">
+		
+			<div class="zhuti_con_r_t clearfloat">
+			
+		
+				<div class="zhuti_con_r_t_l">{$catname}</div>
+			
+				<div class="zhuti_con_r_t_r"><include file="Home:catpos"/></div>
+		
+
+			
+			</div>
+			
+			<!--+++++装内容的盒子+++++-->
+			
+			<div class="zhuti_con_r_b" style="line-height: 30px;">
+			{$content}
+		
+			
+			<!--+++++翻页+++++-->
+			
+			<div class="con_fanye">{$pages}</div>
+			
+			<!--+++++翻页结束+++++-->
+			
+			</div>
+			
+		
+		</div>
+	
+	</div>
+
+</div>
+
+<!--+++内容结束+++-->

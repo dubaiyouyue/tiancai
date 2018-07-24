@@ -1,0 +1,149 @@
+<style>
+.list_fy span{padding:8px;margin-right: 8px;
+	background-color:#fff;
+	color:#3BB3C2;
+	border:1px solid #3BB3C2;
+}.list_fy a{margin-right: 8px;}
+</style>
+<!--+++大图开始+++-->
+
+<div class="datu_border"></div>
+
+<div class="banner2" style="background: url({$image}) no-repeat center;"></div>
+
+<div class="datu_border"></div>
+
+<!--+++大图结束+++-->
+
+<!--+++内容+++-->
+
+<div class="zhuti">
+
+	<div class="zhuti_con clearfloat">
+	
+	<!--+++++内容左边+++++-->
+	
+		<div class="zhuti_con_l">
+		
+			<div class="zhuti_con_l_ttop">
+		
+			<div class="zhuti_con_l_t">{$Categorys.$newsssss.catname}</div>
+			
+			<div class="zhuti_con_l_b">
+			
+				<ul>
+				
+				<include file="A:l"/>
+				
+				</ul>
+			
+			</div>
+			
+			</div>
+			
+			<include file="C:l"/>
+			
+		
+		</div>
+		
+	<!--+++++内容右边+++++-->	
+		
+		<div class="zhuti_con_r">
+		
+			<div class="zhuti_con_r_t clearfloat">
+			
+		
+				<div class="zhuti_con_r_t_l">{$catname}</div>
+			
+				<div class="zhuti_con_r_t_r"><include file="Home:catpos"/></div>
+		
+
+			
+			</div>
+			
+			<!--+++++装内容的盒子+++++-->
+			
+			<div class="zhuti_con_r_b clearfloat">
+			
+				<ul class="news_list">
+				
+				
+				
+				<volist name="list" id="r" empty="$em" key="k">
+				
+				
+				
+					<li {if $k==1}class="list_mt0"{/if}><a href="{$r.url}">
+					
+						<div class="n_l_l"><img src="{$r.thumb|thumb=###,280,158,1}" /></div>
+						
+						<div class="n_l_r">
+						
+							<div class="n_l_r01"><p>{$r.title|str_cut=###,80}</p></div>
+							
+							<div class="n_l_r02"><p>{$r.createtime|toDate=###,'Y-m-d'}</p></div>
+							
+							<div class="n_l_r03"><p>{$r.description|str_cut=###,170}</p></div>
+							
+							<div class="n_l_r04 clearfloat">
+							
+								<div class="look_m clearfloat"><a href="{$r.url}">
+								查看详情
+								
+								</a></div>
+							
+							</div>
+						
+						</div>
+					
+					</a></li>
+					
+					</volist>  
+					
+					
+					
+				
+				</ul>
+				
+<script>
+$(document).ready(
+
+	function(){
+		$(".look_m").mouseover(function(){
+		  $(this).stop().animate({backgroundPositionX:'82px'},100);
+		}); 
+		$(".look_m").mouseout(function(){
+		  $(this).stop().animate({backgroundPositionX:'72px'});
+		}); 
+	}
+
+);
+
+/*$(".look_m").mouseover(function(){
+  $(this).stop().animate({backgroundPositionX:'90px'});
+}); 
+$(".look_m").mouseout(function(){
+  $(this).stop().animate({backgroundPositionX:'72px'});
+}); */
+</script>
+				
+				
+				
+				<!--+++++列表翻页+++++-->
+				
+				<div class="list_fy">{$pages}</div>
+				
+				<!--+++++列表翻页结束+++++-->
+			
+		
+			
+			</div>
+			
+			<!--+++++装内容的盒子结束+++++-->
+		
+		</div>
+	
+	</div>
+
+</div>
+

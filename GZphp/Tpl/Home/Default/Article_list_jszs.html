@@ -1,0 +1,119 @@
+<style>
+.list_fy span{padding:8px;margin-right: 8px;
+	background-color:#fff;
+	color:#3BB3C2;
+	border:1px solid #3BB3C2;
+}.list_fy a{margin-right: 8px;}
+
+.cptitle,.cpjj,.jishu_lisbot,.jishu_listop{width:100%;}.jishu_list li{width: 447px;}.jishu_listop{height:247px;}
+.zhuti_con_r_t_r{    width: 500px;
+    text-align: right;}
+</style>
+<!--+++大图开始+++-->
+
+<div class="datu_border"></div>
+
+<div class="banner3" style="background: url({$image}) no-repeat center;"></div>
+
+<div class="datu_border"></div>
+
+<!--+++大图结束+++-->
+
+<!--+++内容+++-->
+
+<div class="zhuti">
+
+	<div class="zhuti_con clearfloat">
+	
+	<!--+++++内容左边+++++-->
+	
+		<div class="zhuti_con_l">
+		
+			<div class="zhuti_con_l_ttop">
+		
+			<div class="zhuti_con_l_t">{$Categorys.$newsssss.catname}</div>
+			
+			<div class="zhuti_con_l_b">
+			
+				<ul>
+				
+					<include file="A:l"/>
+				
+				</ul>
+			
+			</div>
+			
+			</div>
+			
+			<include file="C:l"/>
+			
+		
+		</div>
+		
+	<!--+++++内容右边+++++-->	
+		
+		<div class="zhuti_con_r">
+		
+			<div class="zhuti_con_r_t clearfloat">
+			
+		
+				<div class="zhuti_con_r_t_l">{$catname}</div>
+			
+				<div class="zhuti_con_r_t_r"><include file="Home:catpos"/></div>
+		
+
+			
+			</div>
+			
+			<!--+++++装内容的盒子+++++-->
+			
+			<div class="zhuti_con_r_b clearfloat">
+			
+			<ul class="jishu_list clearfloat">
+			<volist name="list" id="r" empty="$em" key="k">
+				<li <?php
+				if(!(($k-1)%3)) echo 'class="cpml"';?>>
+				<a href="{$r.url}">
+				
+					<div class="jishu_listop">
+					<img src="{$r.thumb|thumb=###,420,230,1}">
+					</div>
+					
+					<div class="jishu_lisbot">
+					
+						<p class="cptitle">{$r.title|str_cut=###,30}</p>
+						
+						<p class="cpjj">{$r.description|str_cut=###,100}</p>
+					
+					</div>
+				
+				</a>
+				</li>
+				
+				</volist>  
+			
+			</ul>
+
+			</div>
+			
+			
+			<!--+++++列表翻页+++++-->
+				
+				<div class="list_fy">{$pages}</div>
+				
+				<!--+++++列表翻页结束+++++-->
+			
+			
+			<!--+++++装内容的盒子结束+++++-->
+			
+		
+		</div>
+	
+	</div>
+
+</div>
+
+
+
+
+<!--+++内容结束+++-->

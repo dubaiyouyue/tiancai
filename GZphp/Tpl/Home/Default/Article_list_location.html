@@ -1,0 +1,7 @@
+<GZ:subcat  catid="$bcid">
+
+<php> if(empty($jump)){ $jump =  str_ireplace('/index.php','',$r['url']);}</php>
+</GZ:subcat>
+<?php 
+redirect($jump);
+?>

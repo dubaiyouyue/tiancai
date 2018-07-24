@@ -1,0 +1,32 @@
+{__NOLAYOUT__}
+<volist name="new_list" id="r" empty="$em" key="k">
+							<li>
+							
+								<div class="lyz clearfloat">
+								
+									<p class="lyrr">{$r.xm}留言：</p>
+									
+									<p class="ly_time">{$r.createtime|toDate=###,'Y-m-d'}</p>
+								
+								</div>
+								
+								<div class="mess_con">
+								{$r.content}
+								</div>
+								{if $r['hf']}
+								<div class="mess_feg"></div>
+								
+								<div class="lyz clearfloat">
+								
+									<p class="lyrr">管理员回复：</p>
+									
+									<p class="ly_time">{$r.updatetime|toDate=###,'Y-m-d'}</p>
+								
+								</div>
+								
+								<div class="mess_con">
+								{$r.hf}
+								</div>
+								{/if}
+							</li>
+							</volist>

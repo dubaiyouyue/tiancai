@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>广西共振广告后台管理系统</title>
+<link rel="stylesheet" type="text/css" href="/Public/Css/style.css" /> 
+<script type="text/javascript" src="/Public/Js/jquery.min.js"></script> 
+<script type="text/javascript" src="/Public/Js/jquery.artDialog.js?skin=default"></script> 
+<script type="text/javascript" src="/Public/Js/iframeTools.js"></script>
+<script type="text/javascript" src="/Public/Js/jquery.form.js"></script> 
+<script type="text/javascript" src="/Public/Js/jquery.validate.js"></script> 
+<script type="text/javascript" src="/Public/Js/MyDate/WdatePicker.js"></script> 
+<script type="text/javascript" src="/Public/Js/jquery.colorpicker.js"></script> 
+<script type="text/javascript" src="/Public/Js/my.js"></script> 
+<script type="text/javascript" src="/Public/Js/swfupload.js"></script> 
+
+<script language="JavaScript">
+<!--
+var ROOT =	 '';
+var URL = '/Admin/Article';
+var APP	 =	 '';
+var PUBLIC = '/Public';
+function confirm_delete(url){
+	art.dialog.confirm("确认要删除信息吗?", function(){location.href = url;});
+}
+//-->
+</script>
+</head>
+<body width="100%">
+<div id="loader" >页面加载中...</div>
+<div id="result" class="result none"></div>
+<div class="mainbox">
+
+<div id="nav" class="mainnav_title">
+
+	<div id="lang">
+			<a href="index.php?g=Admin&m=Article&a=update&iscreatehtml=1&l=cn" class="on">中文</a>	</div>
+	<ul><a href="?g=Admin&m=Article&a=index&menuid=20">文章模型</a>|
+		<a href="?g=Admin&m=Article&a=add&menuid=20">添加文章</a>|</ul>
+	</div>
+	<script>
+	//|str_replace=.'/index.php','',###
+	var onurl ='/index.php?g=Admin&m=Article&a=update&iscreatehtml=1';
+	jQuery(document).ready(function(){
+		$('#nav ul a ').each(function(i){
+		if($('#nav ul a').length>1){
+			var thisurl= $(this).attr('href');
+			thisurl = thisurl.replace('&menuid=20','');
+			if(onurl.indexOf(thisurl) == 0 ) $(this).addClass('on').siblings().removeClass('on');
+		}else{
+			$('#nav ul').hide();
+		}
+		});
+		if($('#nav ul a ').hasClass('on')==false){
+		$('#nav ul a ').eq(0).addClass('on');
+		}
+	});
+	</script>
+
+<!--+++大图开始+++-->
+<div class="datu_border"></div>
+
+
+<div class="banner">
+
+<div id="full-screen-slider">
+
+	<ul id="slides">
+	
+		
+		
+<li style=" background:url(/Uploads/201610/5808d5b53f65c.jpg) no-repeat center top">
+		
+		<a href="" target="_blank"></a>
+		
+		</li><li style=" background:url(/Uploads/201701/587dc818c0f2e.jpg) no-repeat center top">
+		
+		<a href="" target="_blank"></a>
+		
+		</li><li style=" background:url(/Uploads/201609/57d91c84c54b1.jpg) no-repeat center top">
+		
+		<a href="http://www.resonance.net.cn/" target="_blank"></a>
+		
+		</li><li style=" background:url(/Uploads/201610/5808e05338df7.jpg) no-repeat center top">
+		
+		<a href="" target="_blank"></a>
+		
+		</li><li style=" background:url(/Uploads/201610/57ff60587666c.jpg) no-repeat center top">
+		
+		<a href="" target="_blank"></a>
+		
+		</li>	  
+	  
+	</ul>
+	
+</div>
+
+</div>
+
+<div class="datu_border"></div>
+
+<!--+++大图结束+++-->
+
+<!--+++最新动态开始+++-->
+
+<div class="shouy_zuixin">
+
+	<div class="shouy_zuixin_con">
+		
+		<!--+++标题+++-->
+		
+		<div class="shouy_zuixin_con_top">
+		
+			<div class="shouy_zuixin_con_top_l">最新动态</div>
+			
+			<div class="shouy_zuixin_con_top_c">
+			<p><a href="/Koreaasemiapermanentamakeup/show/815.html">热烈庆祝2017年“广西医学会消化内镜学分会、广西医学会消化病学分会”学术年会在广西南宁隆重举行</a></p>			</div>
+			
+			<div class="shouy_zuixin_con_top_r"><a href="/Tutorialarrangement/">更多新闻</a></div>
+		
+		</div>
+	
+		<!--+++标题结束+++-->
+		
+		<!--+++内容+++-->
+		
+		<div class="dongtai_con">
+		
+			<ul>
+			<li class="dt_liml">
+				<a href="/huxidao/show/811.html">
+				
+					<div class="dt_litop"><img src="/Uploads/201711/thumb_224_130_5a13e9be31494.png" ></div>
+					
+					<div class="dt_libot">呼吸道病原菌核酸检...</div>
+				
+				</a></li><li >
+				<a href="/meimao/show/736.html">
+				
+					<div class="dt_litop"><img src="/Uploads/201609/thumb_224_130_57d0c5c87d28f.png" ></div>
+					
+					<div class="dt_libot">七种自身抗体检测试...</div>
+				
+				</a></li><li >
+				<a href="/jiyin/show/785.html">
+				
+					<div class="dt_litop"><img src="/Uploads/201610/thumb_224_130_5809e8f296ede.jpg" ></div>
+					
+					<div class="dt_libot">Septin9基因甲基化...</div>
+				
+				</a></li>				
+				
+				
+			
+			</ul>
+		
+		</div>
+		
+		<!--+++内容结束+++-->
+	
+	
+	</div>
+
+</div>
+
+<!--+++最新动态结束+++-->
+
+
+</body>
+</html>

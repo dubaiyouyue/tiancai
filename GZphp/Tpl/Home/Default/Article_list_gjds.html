@@ -1,0 +1,129 @@
+<style>
+.list_fy span{padding:8px;margin-right: 8px;
+	background-color:#fff;
+	color:#3BB3C2;
+	border:1px solid #3BB3C2;
+}.list_fy a{margin-right: 8px;}
+</style>
+<!--+++大图开始+++-->
+
+<div class="datu_border"></div>
+
+<div class="banner5" style="background: url({$image}) no-repeat center;"></div>
+
+<div class="datu_border"></div>
+
+<!--+++大图结束+++-->
+
+<!--+++内容+++-->
+
+<div class="zhuti">
+
+	<div class="zhuti_con clearfloat">
+	
+	<!--+++++内容左边+++++-->
+	
+		<div class="zhuti_con_l">
+		
+			<div class="zhuti_con_l_ttop">
+		
+			<div class="zhuti_con_l_t">{$Categorys.$newsssss.catname}</div>
+			
+			<div class="zhuti_con_l_b">
+			
+				<ul>
+				
+					<include file="A:l"/>
+				
+				</ul>
+			
+			</div>
+			
+			</div>
+			
+			<include file="C:l"/>
+			
+		
+		</div>
+		
+	<!--+++++内容右边+++++-->	
+		
+		<div class="zhuti_con_r">
+		
+			<div class="zhuti_con_r_t clearfloat">
+			
+		
+				<div class="zhuti_con_r_t_l">{$catname}</div>
+			
+				<div class="zhuti_con_r_t_r"><include file="Home:catpos"/></div>
+		
+
+			
+			</div>
+			
+			<!--+++++装内容的盒子+++++-->
+			
+			<div class="zhuti_con_r_b clearfloat">
+			
+				<div class="jolin_l">
+				
+					<ul>
+					<volist name="list" id="r" empty="$em" key="k">
+						<li>
+						
+							<div class="join_tit clearfloat">
+							<span class="sp1">职位：</span>{$r.title|str_cut=###,30}<span class="sp2">{$r.createtime|toDate=###,'Y-m-d'}</span>
+							</div>
+							
+							<div class="join_con">
+								
+								<span>要求：</span>{$r.description|str_cut=###,100}
+								
+							
+							</div>
+							
+							<div class="join_but">
+							<a href="{$r.url}">
+							查看详情>>
+							</a>
+							</div>
+						
+						</li>
+						
+						</volist>  
+					
+					</ul>
+				
+				
+				<!--+++++列表翻页+++++-->
+				
+				<div class="list_fy list_fy2" style="width:auto;margin: auto;">
+				
+					{$pages}
+				
+				</div>
+				
+				<!--+++++列表翻页结束+++++-->
+				
+				</div>
+				
+				<div class="jolin_r">
+<GZ:list sql="select * from gz_slide_data where id = '76' order by listorder,id desc limit 1" key='i'>
+
+		
+				
+				<img src="{$r.pic}" />
+				</GZ:list>
+				</div>
+			
+			</div>
+			
+		
+		</div>
+	
+	</div>
+
+</div>
+
+
+<!--+++内容结束+++-->

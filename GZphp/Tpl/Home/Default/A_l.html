@@ -1,0 +1,15 @@
+					<?php
+						$newsssnum=explode(',',$Categorys[$newsssss]['arrchildid']);
+						$newsssnum=count($newsssnum)-1;
+						foreach($Categorys as $k=>$v){
+						$v['url']=str_ireplace('/index.php','',$v['url']);
+							if(($v['parentid']==$newsssss) && ($v['ismenu']==1)) {
+							$nkk++;
+							echo '<li class="';
+							if($nkk==$newsssnum) echo 'li_b_none ';
+							if($v['id']==$catid) echo 'li_active';
+							echo '"><a style="    display: block;" href="'.$v['url'].'">'.$v['catname'].'</a></li>';
+							}
+							
+						}
+					?>

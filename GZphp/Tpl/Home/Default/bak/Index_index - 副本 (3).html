@@ -1,0 +1,873 @@
+<script>
+$(function(){
+	$('.element1 img').jqthumb({
+		width:350,
+		height:130,
+		after: function(imgObj){
+			imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+		}
+	});
+
+	$('.tv_hot img').jqthumb({
+		width:226,
+		height:217,
+		after: function(imgObj){
+			imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+		}
+	});
+});
+$(function(){
+	$('.ddaassimg img').jqthumb({
+		width:145,
+		height:167,
+		after: function(imgObj){
+			imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+		}
+	});
+});
+$(function(){
+	$('.sztd_con_l_t img').jqthumb({
+		width:246,
+		height:360,
+		after: function(imgObj){
+			imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+		}
+	});
+});
+
+$(function(){
+	$('.clearfix img').jqthumb({
+		width:320,
+		height:210,
+		after: function(imgObj){
+			imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+		}
+	});
+});
+$(function(){
+	$('.pics img').jqthumb({
+		width:350,
+		height:350,
+		after: function(imgObj){
+			imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+		}
+	});
+});
+</script>
+
+<!--+++++++++++++++大图部分+++++++++++++++-->
+
+<div class="banner">
+
+
+
+<div id="full-screen-slider">
+	<ul id="slides">
+			<GZ:list sql="select * from gz_slide_data where fid = '1' and lang='1' and  status='1' order by listorder desc,id desc limit 5" key='i'>
+			<li style=" background:url({$r.pic}) no-repeat center top"><a href="{$r.link}" target="_blank"></a></li>
+		</GZ:list>
+	</ul>
+</div>
+
+
+
+</div>
+<?php
+	$nsdfdsfsd=($i*30)/2;
+?>
+<style>#pagination{
+	left:50%;margin-left:-<?php echo $nsdfdsfsd;?>px;
+}
+</style>
+<!--+++++++++++++++作品展示标题+++++++++++++++-->
+
+<div class="zptitle1">
+	<div class="zptitle1_con"><h3>CASES  DISPLAY</h3></div>
+</div>
+
+<div class="zptitle2">
+  <div class="zptitle2_con">
+  	<div class="xiantiao"></div>
+  </div>
+</div>
+
+<div class="zptitle3">
+	<div class="zptitle3_con">
+    	<div class="wenzi">作品展示</div>
+    </div>
+</div>
+
+<!--+++++++++++++++作品展示内容+++++++++++++++-->
+
+<script>
+$(document).ready(function () {
+	$(".main_visual").hover(function(){
+		$("#btn_prev,#btn_next").fadeIn()
+		},function(){
+		$("#btn_prev,#btn_next").fadeOut()
+		})
+	timer = setInterval(function() { $("#btn_next").click();},  5000);
+	$(".main_visual").hover(function() {
+		clearInterval(timer);
+	}, function() {
+		timer = setInterval(function() { $("#btn_next").click();},  5000);
+	})
+	$(".main_image").bind("touchstart", function() {
+		clearInterval(timer);
+	}).bind("touchend", function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+});
+</script>
+<style>
+.zpdisplay,.zpdisplay_con,.mr_frbox{height:215px;}.mr_frUlss ul li {
+height:162px;
+}.mr_frUlss ul li img{width:350px;height:130px;}.mr_frUlss ul li{margin-left:55px;}
+</style>
+<div class="zpdisplay" style="margin-top:0px;">
+	<div class="zpdisplay_con">
+    
+    	<div class="mr_frbox">
+         <img class="mr_frBtnL mr_frBtnLss prev" src="/GZphp/Tpl/Home/Default/Public/images/left.fw.png" width="73" height="137">
+<div class="mr_frUl mr_frUlss" style="margin-top: 51px;padding-left: 0px;margin-left:0px;">
+  <ul class="element1" style="">
+  
+  
+  
+  	<GZ:list catid="159" limit="12" thumb="1" order="posid desc,listorder desc,id desc"><!-- order="posid desc,listorder desc,id desc"-->
+<?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+<li>
+   <a href="{$r.url}" target="_blank">
+   <img src="{$r.thumb|thumb=###,350,130,1}"  width="350" height="130" />
+   <span class="zpspan1">{$r.title|str_cut=###,18}</span>
+   <span class="zpspan2" style="display:none;"><p><span>简介：</span>{$r.description|str_cut=###,36}</p></span>
+   </a>
+</li>
+  
+			
+			
+			
+		</GZ:list>
+  
+  
+
+  
+
+  
+  </ul>
+</div>
+  <img class="mr_frBtnR mr_frBtnRss next" src="/GZphp/Tpl/Home/Default/Public/images/right.fw.png" width="73" height="137"> </div>
+
+<script language="javascript">
+$(".mr_frUl ul li img").hover(function(){$(this).css("border-color","#A0C0EB");},function(){$(this).css("border-color","#d8d8d8")});
+jQuery(".mr_frbox").slide({titCell:"",mainCell:".mr_frUl ul",autoPage:true,effect:"leftLoop",autoPlay:true,vis:2});
+</script>
+    
+    </div>
+</div>
+
+<!--+++++++++++++++教程安排+++++++++++++++-->
+<style>
+.jc_con_l_b ul .action_no{
+	background:url('images/no.gif');
+}
+.jc_con_l_b ul li a{display:block;}
+</style>
+<div class="jc">
+	<div class="jc_con clearfloat">
+   	  <div class="jc_con_l">
+      	<div class="jc_con_l_t">
+        	<p class="jct1">{$Categorys.143.catname}</p>
+            <p class="jct2">TUTORIAL  ARRANGEMENT</p>
+        </div>
+        <div class="jc_con_l_b">
+        	<ul>
+            	<li xwe="153" class="action"><a href="javascript:;">{$Categorys.153.catname}</a></li>
+                <li xwe="154"><a href="javascript:;">{$Categorys.154.catname}</a></li>
+                <li xwe="155"><a href="javascript:;">{$Categorys.155.catname}</a></li>
+                <li xwe="156"><a href="javascript:;">{$Categorys.156.catname}</a></li>
+                <li xwe="157"><a href="javascript:;">{$Categorys.157.catname}</a></li>
+            </ul>
+        </div>
+      </div>
+	  
+	  
+	 
+	  <div class="jc_con_r clearfloat" id="asdfadsfdasfadsdasf"></div>
+      
+      <div class="jc_con_r clearfloat" id="jc153" style="display:none;">
+      
+	  
+	  <GZ:list catid="153" limit="3" thumb="1" key="k" order="posid desc,listorder desc,id desc">
+	  <?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+	  {if $k==1}
+      	<div class="jc_con_r_l">
+        
+        	<div class="jc_con_r_l_t tv_hot ">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>课程简介：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+            
+        </div>
+        {/if}{if $k==2}
+		
+        <div class="jc_con_r_c">
+        
+        	<div class="jc_con_r_l_t tv_hot fl">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>课程资质：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+        
+        </div>{/if}{if $k==3}
+        
+        <div class="jc_con_r_r">
+        
+        	<div class="jc_con_r_l_t tv_hot fl">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>学习资料：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+        
+        </div>{/if}
+        </GZ:list>
+      </div>
+	  
+	  
+	   <div class="jc_con_r clearfloat" style="display:none;" id="jc154">
+      
+	  
+	  <GZ:list catid="154" order="posid desc,listorder desc,id desc" limit="3" thumb="1" key="k">
+	  <?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+	  {if $k==1}
+      	<div class="jc_con_r_l">
+        
+        	<div class="jc_con_r_l_t tv_hot ">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>课程简介：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+            
+        </div>
+        {/if}{if $k==2}
+		
+        <div class="jc_con_r_c">
+        
+        	<div class="jc_con_r_l_t tv_hot fl">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>课程资质：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+        
+        </div>{/if}{if $k==3}
+        
+        <div class="jc_con_r_r">
+        
+        	<div class="jc_con_r_l_t tv_hot fl">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>学习资料：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+        
+        </div>{/if}
+        </GZ:list>
+      </div>
+	  
+	  
+	   <div class="jc_con_r clearfloat" style="display:none;" id="jc155">
+      
+	  
+	  <GZ:list catid="155" order="posid desc,listorder desc,id desc" limit="3" thumb="1" key="k">
+	  <?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+	  {if $k==1}
+      	<div class="jc_con_r_l">
+        
+        	<div class="jc_con_r_l_t tv_hot ">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>课程简介：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+            
+        </div>
+        {/if}{if $k==2}
+		
+        <div class="jc_con_r_c">
+        
+        	<div class="jc_con_r_l_t tv_hot fl">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>课程资质：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+        
+        </div>{/if}{if $k==3}
+        
+        <div class="jc_con_r_r">
+        
+        	<div class="jc_con_r_l_t tv_hot fl">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>学习资料：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+        
+        </div>{/if}
+        </GZ:list>
+      </div>
+	  
+	  
+	  
+	   <div class="jc_con_r clearfloat" style="display:none;" id="jc156">
+      
+	  
+	  <GZ:list catid="156" order="posid desc,listorder desc,id desc" limit="3" thumb="1" key="k">
+	  <?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+	  {if $k==1}
+      	<div class="jc_con_r_l">
+        
+        	<div class="jc_con_r_l_t tv_hot ">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>课程简介：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+            
+        </div>
+        {/if}{if $k==2}
+		
+        <div class="jc_con_r_c">
+        
+        	<div class="jc_con_r_l_t tv_hot fl">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>课程资质：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+        
+        </div>{/if}{if $k==3}
+        
+        <div class="jc_con_r_r">
+        
+        	<div class="jc_con_r_l_t tv_hot fl">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>学习资料：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+        
+        </div>{/if}
+        </GZ:list>
+      </div>
+	  
+	  
+	   <div class="jc_con_r clearfloat" style="display:none;" id="jc157">
+      
+	  
+	  <GZ:list catid="157" order="posid desc,listorder desc,id desc" limit="3" thumb="1" key="k">
+	  <?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+	  {if $k==1}
+      	<div class="jc_con_r_l">
+        
+        	<div class="jc_con_r_l_t tv_hot ">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>课程简介：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+            
+        </div>
+        {/if}{if $k==2}
+		
+        <div class="jc_con_r_c">
+        
+        	<div class="jc_con_r_l_t tv_hot fl">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>课程资质：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+        
+        </div>{/if}{if $k==3}
+        
+        <div class="jc_con_r_r">
+        
+        	<div class="jc_con_r_l_t tv_hot fl">
+            	<a href="{$r.url}" class="avatar" target="_blank" title="">
+				<img src="{$r.thumb|thumb=###,226,217,1}" width="226" height="217"> 
+                </a> 
+            </div>
+            
+            <div class="jc_con_r_l_b">
+            	<p><a href="{$r.url}"><span>学习资料：</span>{$r.description|str_cut=###,40}</a></p>
+            </div>
+        
+        </div>{/if}
+        </GZ:list>
+      </div>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+    </div>
+</div>
+
+<!--+++++++++++++++师资团队标题+++++++++++++++-->
+
+<div class="zptitle1">
+	<div class="zptitle1_con"><h3>FACULTY  TEAM</h3></div>
+</div>
+
+<div class="zptitle2">
+  <div class="zptitle2_con">
+  	<div class="xiantiao"></div>
+  </div>
+</div>
+
+<div class="zptitle3">
+	<div class="zptitle3_con">
+    	<div class="wenzi">师资团队</div>
+    </div>
+</div>
+
+<!--+++++++++++++++师资团队+++++++++++++++-->
+
+<div class="sztd">
+	<div class="sztd_con clearfloat">
+    
+    	<div class="sztd_con_l" id="sfsdfsdjjmmm">
+        	
+      </div>
+        
+        <div class="sztd_con_r">
+        
+		
+		
+		
+		
+		
+			<div id="msjjj">
+
+			</div>
+			
+			
+			
+			
+            
+            <div class="jsqh">
+            
+            <div class="mr_frbox mr_frbox001">
+            <img class="mr_frBtnL prev mr_frBtnL001" src="/GZphp/Tpl/Home/Default/Public/images/jsleft.fw.png" width="41" height="66">
+<div class="mr_frUl mr_frUlmr_frUl mr_frUl001">
+  <ul>
+  
+  
+  
+  			 <GZ:list catid="151" order="posid desc,listorder desc,id desc" limit="12" thumb="1" field="*" key="k">
+			 
+			 <?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+			 
+			 
+			 <?php
+				if($k==1) $nesssid=$r['id'];
+			 ?>
+			   <li>
+   <a href="javascript:;" onclick="sdfjjj('{$r.id}');" class="ddaassimg">
+   <img src="{$r.thumb|thumb=###,145,167,1}" width="145" height="167">
+   <span class="jsspan">{$r.xm}</span> 
+   </a>
+   
+   <div id="xmtupp{$r.id}" style="display:none;">
+   <div class="sztd_con_l_t"><img src="{$r.thumb|thumb=###,246,360,1}" width="246" height="360"></div>
+            <div class="sztd_con_l_b"><p>姓名：{$r.xm}</p></div>
+		
+   </div>
+   
+   			<div id="sssiii{$r.id}" style="display:none;">
+				<div class="szjs1"><p>名师简介：</p></div>
+				<div class="szjs2"><p><span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>{$r.xm}</p></div>
+				<div class="szjs3"><p><span>任教课程：</span>{$r.rjqk}</p></div>
+				<div class="szjs4"><p><span>资&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历：</span>{$r.zl|str_cut=###,65}</p></div>
+				<div class="szjs5 clearfloat" style="min-height: 75px;">
+					<div class="szjs5_l"><p><span>获奖情况：</span>{$r.hjqk|str_cut=###,135}</p></div>
+					<div class="szjs5_r"><a href="{$r.url}">查看详情>></a></div>
+				</div>
+			</div>
+   
+   
+   
+   </li>
+			
+
+			
+			
+		</GZ:list>
+  
+  
+  
+  
+  
+
+   
+   
+   
+   
+   
+  </ul>
+</div>
+  <img class="mr_frBtnR next mr_frBtnR001" src="/GZphp/Tpl/Home/Default/Public/images/jsright.fw.png" width="41" height="66"></div>
+  
+<script language="javascript">
+sdfjjj('{$nesssid}');
+function sdfjjj(n){
+	var nnsf=$('#sssiii'+n).html();
+	var nnsf2=$('#xmtupp'+n).html();
+	$('#msjjj').html(nnsf);
+	$('#sfsdfsdjjmmm').html(nnsf2);
+}
+
+
+
+$(".mr_frUlmr_frUl ul li img").hover(function(){$(this).css("border-color","#A0C0EB");},function(){$(this).css("border-color","#d8d8d8")});
+jQuery(".mr_frbox").slide({titCell:"",mainCell:".mr_frUlmr_frUl ul",autoPage:false,effect:"leftLoop",autoPlay:true,vis:4});
+</script>
+            
+          </div>
+          
+          	<div class="jitj"><a href="<?php echo str_ireplace('/index.php','',$Categorys['151']['url']);?>">查看更多>></a></div>
+            
+        </div>
+    
+    </div>
+</div>
+
+<!--+++++++++++++++课堂实操+++++++++++++++-->
+
+<div class="ktsc">
+
+<!--+++++++++++++++课堂实操标题+++++++++++++++-->
+
+<div class="zptitle1">
+	<div class="zptitle1_con"><h3>CLASSROOM  PRACTICE</h3></div>
+</div>
+
+<div class="zptitle2">
+  <div class="zptitle2_con">
+  	<div class="xiantiao"></div>
+  </div>
+</div>
+
+<div class="zptitle3 ">
+	<div class="zptitle3_con">
+    	<div class="wenzi zptitle3ket">课堂实操</div>
+    </div>
+</div>
+
+<!--+++++++++++++++课堂实操内容+++++++++++++++-->
+
+<div class="ktsc_con">
+	<ul class="clearfix">
+	
+	<GZ:list catid="171" order="posid desc,listorder desc,id desc" limit="6" thumb="1" key="k">
+	<?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+    	<li <?php if(!($k%3)) echo ' class="mro"';?>>
+        <a href="{$r.url}">
+        <div class="photo"><img src="{$r.thumb|thumb=###,320,210,1}" width="320" height="210"></div>
+        <div class="rsp"></div>
+        <div class="text">
+        	<h3>{$r.title|str_cut=###,30}</h3>
+            <p>{$r.description|str_cut=###,66}</p>
+        </div>
+        </a>
+        </li>
+      </GZ:list>
+	  
+    </ul>
+    <div style="clear:both;"></div>
+    <div class="ktlj"><a href="<?php echo str_ireplace('/index.php','',$Categorys['171']['url']);?>">查看更多>></a></div>
+</div>
+
+<script src="/GZphp/Tpl/Home/Default/Public/js/js2.js"></script>
+
+
+
+</div>
+
+
+<!--+++++++++++++++新闻中心标题+++++++++++++++-->
+
+<div class="zptitle1 xwzptitle1">
+	<div class="zptitle1_con"><h3>NEWSINFORMATION</h3></div>
+</div>
+
+<div class="zptitle2">
+  <div class="zptitle2_con">
+  	<div class="xiantiao"></div>
+  </div>
+</div>
+
+
+<!-- 代码部分begin -->
+<div class="lanren">
+	<div class="slide_min"  style="display:none;"></div>
+    <div class="slide_box">
+    	<h2><img src="/GZphp/Tpl/Home/Default/Public/images/slide_box.jpg" /></h2>
+        <p><a title="点击这里给我发消息" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$qq}&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=2:{$qq}:41"></a></p>
+        <p><GZ:list sql="select * from gz_slide_data where fid = '6' and lang='1' and  status='1' order by listorder,id desc limit 1" key='i'>
+        	<img style="cursor: auto;" src="{$r.pic}" class="weixin" width="120" height="120" /><br /></GZ:list>
+        	<b>客户服务热线</b><br />
+        	{$tel}
+        </p>
+        <span><a href="/Onlinemessage/">给我们留言</a></span>
+    </div>
+</div>
+
+<script>
+$(function(){
+	var thisBox = $('.lanren');
+	var defaultTop = thisBox.offset().top;
+	var slide_min = $('.lanren .slide_min');
+	var slide_box = $('.lanren .slide_box');
+	var closed = $('.lanren .slide_box h2 img');
+	slide_min.on('click',function(){$(this).hide();	slide_box.show();});
+	closed.on('click',function(){slide_box.hide().hide();slide_min.show();});
+	// 页面滚动的同时，悬浮框也跟着滚动
+	$(window).on('scroll',function(){scro();});
+	$(window).onload = scro();
+	function scro(){
+		var offsetTop = defaultTop + $(window).scrollTop()+'px';
+		thisBox.animate({top:offsetTop},
+		{	duration: 600,	//滑动速度
+	     	queue: false    //此动画将不进入动画队列
+	     });
+	}
+});
+</script>
+<!-- 代码部分end -->
+
+
+
+
+<div class="zptitle3">
+	<div class="zptitle3_con">
+    	<div class="wenzi">新闻动态</div>
+    </div>
+</div>
+
+<!--+++++++++++++++新闻中心内容+++++++++++++++-->
+
+<div class="news">
+	<div class="news_con clearfloat">
+    
+    	<div class="news_con_l clearfloat">
+		
+		
+		<GZ:list catid="147" order="posid desc,listorder desc,id desc" limit="5" key="k">
+		<?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+        	<div class="onenews clearfloat {if $k!=1}mt25{/if}">
+            
+        	<div class="news_con_rq clearfloat">
+            	<div class="news_con_rqtt">{$r.createtime|toDate=###,'d'}</div>
+                <div class="news_con_rqbb">{$r.createtime|toDate=###,'Y-m'}</div>
+            </div>
+            
+            <div class="news_con_btnr">
+            	<h3><a href="{$r.url}">{$r.title|str_cut=###,40}</a></h3>
+                <p>{$r.description|str_cut=###,60}</p>
+            </div>
+            </div>
+			
+			</GZ:list>
+        	
+            
+        </div>
+        
+        <div class="news_con_r">
+        <div class="news_con_rlb">
+<!--代码部分begin-->
+<div id="slider">
+	<ul class="pics">
+		
+		<GZ:list catid="146" order="posid desc,listorder desc,id desc" thumb="1" limit="5"><!-- order="posid desc,listorder desc,id desc"-->
+		<?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+		
+		<li><a href="{$r.url}"><img alt="" src="{$r.thumb|thumb=###,350,350,1}" width="350" height="350" /></a></li>
+		</GZ:list>
+	</ul>
+	<ul id="nav">
+	<GZ:list catid="146" thumb="1" key="k" limit="5">
+	<?php
+$r['url']=str_ireplace('/index.php','',$r['url']);
+?>
+	
+	
+		<li onmouseover="setTimeout(function(){lanrenzhijia.slider.pos(<?php echo ($k-1);?>)},300)">{$k}</li>
+		</GZ:list>
+	</ul>
+</div>
+<script>
+var lanrenzhijia = {}, H$ = function(id){return document.getElementById(id)}, H$$ = function(c,p){return p.getElementsByTagName(c)}
+lanrenzhijia.slider = function(){
+	return{
+		init:function(id,options){
+			var ul = this.u = H$$('ul',H$(id))[0], li = H$$('li',ul); this.l=li.length; this.index = 0;
+			if(options.navId&&options.curClass){this.nav = H$$('li',H$(options.navId)), this.c = options.curClass;}
+			this.a=options.auto||0; this.v=options.vertical||0;H$(id).style.overflow = 'hidden';H$(id).style.position = 'relative';ul.style.position='absolute';
+			if(this.v){ul.style.top=0; this.h=options.height||li[0].offsetHeight; ul.style.height=(this.l*this.h)+'px';}
+			else{ul.style.left=0; this.w=options.width||li[0].offsetWidth; ul.style.width=(this.l*this.w)+'px';}
+			this.pos(options.index||0,this.a?1:0);
+		},
+		
+		pos:function(pos,a){
+			clearInterval(this.u.posAnim); clearInterval(this.u.auto);
+			var curPos=this.v?parseInt(this.u.style.top):parseInt(this.u.style.left),
+			correctPos=this.v?pos*this.h:pos*this.w, 
+			direction = correctPos>Math.abs(curPos)?1:-1;
+			correctPos*=-1; 
+			this.index = pos;
+			if(this.nav){for(var i=0;i<this.l;i++){this.nav[i].className = i==pos?this.c:''}}
+			this.u.posAnim = setInterval(function(){lanrenzhijia.slider.anim(correctPos,direction,a)},10);
+		},
+		
+		anim:function(des,dir,a){
+			var curPos=this.v?parseInt(this.u.style.top):parseInt(this.u.style.left);
+			if(curPos == des){
+				clearInterval(this.u.posAnim);
+				if(a||this.a){lanrenzhijia.slider.auto()}
+			}
+			else{
+				var v=curPos-Math.ceil(Math.abs(des-curPos)*.07)*dir+'px';
+				this.v?this.u.style.top=v:this.u.style.left=v;
+			}
+		},
+		
+		auto:function(){
+			this.u.auto=setInterval(function(){lanrenzhijia.slider.move(1,1)},this.a*2000)
+		},
+		
+		move:function(n,a){
+			var num=this.index+n, i=n==1?num==this.l?0:num:num<0?this.l-1:num; lanrenzhijia.slider.pos(i,a);
+		}
+	};
+}();
+</script>
+<script>
+lanrenzhijia.slider.init('slider',{	
+	auto:3,
+	vertical:1,
+	navId:'nav',
+	curClass:'nav',
+	index:0});
+</script>
+<!--代码部分end-->
+</div>
+
+			<div class="dslj"><a style="display: block;" href="<?php echo str_ireplace('/index.php','',$Categorys['165']['url']);?>">大赛现场</a></div>
+            
+        </div>
+        
+    </div>	
+</div>
+
+ <script>
+		ssss('153');
+	  $('.jc_con_l_b ul li').mouseover(function(){
+		  $('li').addClass('action_no');
+		});
+		
+	  $('.jc_con_l_b ul li').mouseout(function(){
+		  $('li').removeClass('action_no');
+		});
+		
+	  $('.jc_con_l_b ul li').click(function(){
+		  $('li').removeClass('action');
+		  $(this).addClass('action');
+		  ssss($(this).attr('xwe'));
+		});
+		//sdfadsfdaf=$('.fdasfdasfdasfdasfdas').html(shtmm)+'<div></div>';
+		function ssss(n){
+		var shtmm=$('#jc'+n).html();
+		//var htmm=document.getElementById('jc'+n).innerHTML;
+		//document.getElementById('jc153').innerHTML=htmm;
+		//alert(htmm);
+		//if(n==153) shtmm=sdfadsfdaf;
+		$('#asdfadsfdasfadsdasf').html(shtmm);
+		}
+		
+		
+	  </script>

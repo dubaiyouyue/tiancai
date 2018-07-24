@@ -1,0 +1,105 @@
+
+<!--+++++++++++++++大图部分+++++++++++++++-->
+<style>
+.banner2 {
+    background: url({$image}) no-repeat;
+    background-size:cover;background-position: center;}
+</style>
+<div class="banner2"></div>
+
+<!--+++++++++++++++主体部分+++++++++++++++-->
+
+<div class="zhuti">
+
+  <div class="zhuti_con clearfloat">
+  	
+<!--+++++++++++++++主体左边部分+++++++++++++++-->
+    
+    <div class="zhuti_con_l">
+    	
+        <div class="zhuti_con_l_t">
+        	
+            <div class="zhuti_con_l_t_t">
+            
+                       	<p class="zt_tp1 zt_tp2">{$Categorys.$newsssss.keywords}</p>
+                
+                <p class="zt_tp2">{$Categorys.$newsssss.catname}</p>
+                
+            </div>
+            
+            <div class="zhuti_con_l_p_b">
+            	<ul>
+<include file="A:l"/>
+                </ul>
+            </div>
+            
+        </div>
+        
+        
+   <include file="C:l"/>
+        
+    </div>
+    
+<!--+++++++++++++++主体右边部分+++++++++++++++-->
+    
+    <div class="zhuti_con_r">
+    
+    	<div class="zhuti_con_r_1 clearfloat">
+        	
+            <div class="zhuti_con_r_1_l"><span>{$catname}</span>  /  {$seo_keywords}</div>
+            
+            <div class="zhuti_con_r_1_r"><include file="Home:catpos"/></div>
+            
+        </div>
+        
+        <div class="zhuti_con_r_2">在线留言</div>
+        
+        <div class="zhuti_con_r_3">
+        
+		
+		
+		
+		
+		<volist name="new_list" id="r" empty="$em" key="k">
+		
+		
+		
+		
+		<div class="ly_con clearfloat">
+        
+       	  <div class="ly_con_t">
+          	<p>姓名：{$r.xm}</p>
+            <p><span>留言内容:</span>{$r.content}</p>
+            <p>{$r.createtime|toDate=###,'Y-m-d'}</p>
+          </div>
+          
+          <div class="ly_con_b">
+          	<p>回复人：管理员</p>
+            <p><span>回复内容:</span>{$r.hf}</p>
+            <p>{$r.updatetime|toDate=###,'Y-m-d'}</p>
+          </div>
+          
+        </div>
+        
+		
+		
+		 </volist>  
+        
+        
+        </div>
+        
+        
+            <!--s-翻页-->
+            <div class="digg">{$pages}</div>
+            <!--e-翻页-->      
+        
+        
+
+        
+    
+    </div>
+    
+  </div>
+  
+  
+</div>

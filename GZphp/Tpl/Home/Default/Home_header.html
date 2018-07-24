@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+var ua = navigator.userAgent.toLowerCase();
+var isWeixin = ua.indexOf('micromessenger') != -1;
+var isAndroid = ua.indexOf('android') != -1;
+var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
+if (isWeixin || isAndroid || isIos) {
+    location.href = 'http://m.gxtcyl.com/';
+}
+</script>
+
+
+<link href="/css/css.css?v1" type="text/css" rel="stylesheet" />
+
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+
+<script src="/js/huandeng.js?6"></script>
+
+<script src="/layer-v2.1/layer.js"></script>
+
+<title>{$seo_title}{if $catid}-{$site_name}{/if}</title>
+
+<meta name="keywords" content="{$seo_keywords}" />
+<meta name="description" content="{$seo_description}" />
+
+</head>
+
+<body>
+
+<!--+++begin--top+++-->
+
+<div class="top">
+
+	<div class="top_con clearfloat">
+	
+	<!--+++begin--logo+++-->
+	
+		<div class="top_con_t"><img src="/images/logo.fw.png" ></div>
+	
+	<!--+++end--logo+++-->
+	
+	<!--+++begin--naver+++-->
+	
+		<div class="top_con_b">
+		
+			<ul>
+			
+				<li class="naver_ml0 {if !$catid}naver_action{/if}"><a href="/">首页</a></li>
+				
+  <?php
+	//dump($Categorys);
+	//echo $newsssss;
+			foreach($Categorys as $k=>$v){
+				if($v['ismenu'] && !$v['parentid']){
+				//$kk++;
+				?>
+				
+				<li class="<?php if($v['id']==$newsssss) echo 'naver_action';?>"><a href="{$v.url}">{$v.catname}</a></li>
+				<?php 
+				}
+				}?>
+			
+			</ul>
+		
+		</div>
+	
+	<!--+++end--naver+++-->
+	
+	<!--+++浮动的分享跟二维码+++-->
+	
+	<div class="naver_float clearfloat">
+	
+		<div class="naver_float_l clearfloat">
+		
+			<div class="naver_float_l_l">
+			<a href="javascript:;">中文版</a> 
+			<a href="javascript:;" class="banben_ml">英文版</a>
+			</div>
+			
+			<div class="naver_float_l_r">
+			
+				<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+				
+			
+			</div>
+		
+		</div>
+		
+		
+		
+		
+<GZ:list sql="select * from gz_slide_data where fid = '5' and lang='1' and  status='1' order by listorder,id desc limit 2" key='i'>
+			<?php
+		$ewmarray[$r['id']]=$r;
+		//dump($ewmarray);
+			?>
+		</GZ:list>
+		
+		
+		
+		
+		<div class="naver_float_r clearfloat">
+		
+			<div class="naver_float_r_l">
+			
+				<img src="{$ewmarray.72.pic}" >
+				
+				<p>微官网</p>
+				
+			</div>
+			
+			<div class="naver_float_r_r">
+			
+				<img src="{$ewmarray.71.pic}" >
+				
+				<p>手机网站</p>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+	
+	</div>
+	
+	<!--+++浮动的分享跟二维码结束+++-->
+
+</div>
+
+<!--+++end--top+++-->

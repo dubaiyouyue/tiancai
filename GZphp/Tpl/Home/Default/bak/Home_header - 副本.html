@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$seo_title}{if $catid}-{$site_name}{/if}</title>
+
+<meta name="keywords" content="{$seo_keywords}" />
+<meta name="description" content="{$seo_description}" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link href="/GZphp/Tpl/Home/Default/Public/css/style.css" type="text/css" rel="stylesheet" />
+<script src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.js"></script>
+<script src="/GZphp/Tpl/Home/Default/Public/js/jquery.movebg.js"></script><!--导航栏jq-->
+<script src="/GZphp/Tpl/Home/Default/Public/js/huandeng.js"></script><!--大图-->
+<script src="/GZphp/Tpl/Home/Default/Public/js/ss.js"></script><!--作品展示-->
+
+<script src="/GZphp/Tpl/Home/Default/Public/js/jqthumb.min.js"></script><!--图片变形处理-->
+
+
+</head>
+
+<body>
+<!--+++++++++++++++头部logo部分+++++++++++++++-->
+
+<div class="t_logo">
+  <div class="t_logo_c clearfloat">
+  	<div class="t_logo_c_l"><a href="/"><img src="/GZphp/Tpl/Home/Default/Public/images/logo.png" width="293" height="82"></a></div>
+    <div class="t_logo_c_r"><p>{$tel}</p></div>
+  </div>
+</div>
+
+<!--+++++++++++++++头部导航部分+++++++++++++++-->
+
+
+<?php
+
+	//dump($Categorys);exit;
+?>
+
+
+
+
+<div class="dh">
+  <div class="dh_con nav">
+  	<ul>
+    	<li class="nav-item {if !$catid}cur{/if}"><a href="/">首页</a></li>
+		
+		
+		<?php
+			foreach($Categorys as $k=>$v){
+				$v['url']=str_ireplace('/index.php','',$v['url']);
+				if(!$v['parentid'] && ($v['ismenu']==1)){
+				?>
+				
+				<li class="nav-item <?php if($v['id']==$newsssss) echo 'cur';?>"><a href="{$v.url}">{$v.catname}</a>
+				
+				
+				
+				<?php
+					$new_eejjj=explode(',',$v['arrchildid']);
+					$new_eejjj_count=count($new_eejjj)-1;
+					if($new_eejjj_count) echo '<ul class="two_ul">';
+					foreach($new_eejjj as $k1=>$v1){
+						if($k1 && ($Categorys[$v1]['ismenu']==1)){
+				?>
+					
+						<li><a href="<?php echo str_ireplace('/index.php','',$Categorys[$v1]['url']);?>"><?php echo $Categorys[$v1]['catname'];?></a></li>
+						
+					
+				
+				<?php }}
+				if($new_eejjj_count) echo '</ul>';
+				?>
+				
+				</li>
+				
+				
+				<?php
+				}
+			}
+		?>
+		
+		
+
+    </ul>
+    <!--移动的滑动-->
+    <div class="move-bg"></div>
+    <!--移动的滑动 end-->
+  </div>
+</div>
+
+<script>
+$(function(){
+	$(".nav").movebg({width:125/*滑块的大小*/,extra:20/*额外反弹的距离*/,speed:400/*滑块移动的速度*/,rebound_speed:500/*滑块反弹的速度*/});
+})
+</script>
